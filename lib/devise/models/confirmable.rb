@@ -88,9 +88,9 @@ module Devise
             self.unconfirmed_email = nil
 
             # We need to validate in such cases to enforce e-mail uniqueness
-            save(validate: true)
+            save!(validate: true)
           else
-            save(validate: args[:ensure_valid] == true)
+            save!(validate: args[:ensure_valid] == true)
           end
 
           after_confirmation if saved
